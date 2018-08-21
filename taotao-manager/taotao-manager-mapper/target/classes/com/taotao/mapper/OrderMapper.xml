@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taotao.mapper.OrderMapper" >
+<select id="reqId" resultType="com.taotao.pojo.Order">
+    select * from `order` where goods_id=#{goods_id} and client_id=#{client_id}
+</select>
+
+    <insert id="buyIt">
+        insert into `order`(time,goods_id,state,client_id) values(#{time},#{goods_id},#{state},#{client_id})
+    </insert>
+
+
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taotao.mapper.ClientMapper" >
+<select id="getClientByMobile" resultType="com.taotao.pojo.Client">
+    select * from client where mobile=#{mobile}
+</select>
+  <!--  <select id="" resultType="com.taotao.pojo.Client">
+        select * from client where 1=1
+    </select>-->
+    <insert id="register" >
+        insert into client(address,sex,mobile,name) values(#{address},#{sex},#{mobile},#{name})
+    </insert>
+    <insert id="registerTemp" >
+        insert into client(mobile) values(#{mobile})
+    </insert>
+</mapper>
